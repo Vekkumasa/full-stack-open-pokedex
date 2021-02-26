@@ -31,19 +31,8 @@ jobs:
           start: npm run start-prod
           wait-on: http://localhost:5000 
 
-name: Deploy
-
-on:
-  push:
-    branches:
-      - master
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: akhileshns/heroku-deploy@v3.12.12
+      - name: deploy
+        uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "pokemoni-applikaatio" #Must be unique in Heroku
