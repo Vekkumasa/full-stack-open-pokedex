@@ -37,3 +37,4 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "pokemoni-applikaatio" #Must be unique in Heroku
           heroku_email: "ylirasku@gmail.com"
+          healthcheck: "https://pokemoni-applikaatio.herokuapp.com/health"
