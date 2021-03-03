@@ -1,8 +1,7 @@
 name: healthcheck
 on:
-  push:
-    branches:
-      - trunk
+  schedule:
+  - cron: "0 0 * * *"
 
 jobs:
   healthcheck:
