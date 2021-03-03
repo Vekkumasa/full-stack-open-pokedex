@@ -56,6 +56,7 @@ jobs:
           DEFAULT_BUMP: "patch"
         
       - uses: 8398a7/action-slack@v3
+      - name: Slack Success
         with:
           status: custom
           fields: workflow,job,commit,repo,ref,author,took
@@ -71,6 +72,7 @@ jobs:
         if: success()  
 
       - uses: 8398a7/action-slack@v3
+      - name: Slack Failure
         with:
           status: custom
           fields: workflow,job,commit,repo,ref,author,took
