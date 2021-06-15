@@ -55,7 +55,8 @@ jobs:
           WITH_V: true
           DEFAULT_BUMP: "patch"
         
-      - uses: 8398a7/action-slack@v3
+      - name: Slack Success
+        uses: 8398a7/action-slack@v3
         with:
           status: custom
           fields: workflow,job,commit,repo,ref,author,took
@@ -70,7 +71,8 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         if: success()  
 
-      - uses: 8398a7/action-slack@v3
+      - name: Slack Failure
+        uses: 8398a7/action-slack@v3
         with:
           status: custom
           fields: workflow,job,commit,repo,ref,author,took
